@@ -1,0 +1,111 @@
+.inventoryLootList {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px 30px;
+  width: 100%;
+  padding: 30px 35px 35px;
+  box-sizing: border-box;
+}
+
+.inventoryLootItem {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &.withActions {
+    &:hover .actions {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.lootItem {
+  padding: 13px 12px 23px;
+  min-height: 205px;
+
+  p {
+    margin-bottom: 0;
+    padding-top: 10px;
+    font-size: 16px;
+  }
+
+  & > div:last-of-type {
+    height: 100px;
+  }
+}
+
+.actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(27, 32, 90, 0.56);
+  border-radius: 18px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  box-sizing: border-box;
+}
+
+.lootItemActions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 0 21px;
+  box-sizing: border-box;
+
+  button {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .inventoryLootList {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .inventoryLootList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .inventoryLootList {
+    gap: 10px;
+    padding: 17.5px 20px 20px;
+  }
+
+  .lootItem {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .inventoryLootList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .inventoryLootList {
+    padding: 0;
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .inventoryLootList {
+    grid-template-columns: repeat(2, minmax(auto, 1fr));
+  }
+}

@@ -1,0 +1,195 @@
+.contractHistoryItem {
+  width: 100%;
+  padding: 20px 28px;
+  border-radius: 20px;
+  background: #141949;
+  box-sizing: border-box;
+}
+
+.items {
+  display: flex;
+  gap: 17px;
+}
+
+.craftItems {
+  display: flex;
+  gap: 17px;
+}
+
+.craftResult {
+  width: 169px;
+  height: 164px;
+  flex-shrink: 0;
+  font-size: 13.19px;
+  padding: 10px 10px 19px;
+
+  p {
+    font-size: 13.19px;
+
+    &:nth-of-type(1) {
+      margin-top: 12px;
+    }
+
+    &:nth-of-type(2) {
+      padding-top: 5px;
+    }
+  }
+}
+
+.itemsForCraft {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(40px, 80px));
+  grid-template-rows: repeat(2, minmax(50px, 80px));
+  gap: 8px 10px;
+  width: 100%;
+}
+
+.itemForCraft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+.contractInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 11px;
+  padding: 8px 8px 8px 15px;
+  border-radius: 10px;
+  background: #1a1e5d;
+  font-family: var(--font-exo2);
+  font-size: 12px;
+}
+
+.craftPrice {
+  font-weight: 600;
+  line-height: 23px;
+
+  span {
+    font-family: var(--font-exo);
+    font-weight: 900;
+  }
+}
+
+.itemsNumber {
+  font-family: var(--font-exo2);
+  font-weight: 600;
+  line-height: 23px;
+
+  span {
+    font-family: var(--font-exo);
+    font-weight: 900;
+    color: #f08a75;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .craftResult {
+    width: 127px;
+    height: 135px;
+  }
+
+  .itemsForCraft {
+    grid-template-rows: 65px 65px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .contractHistoryItem {
+    padding: 20px 10px 15px 15px;
+  }
+
+  .itemsForCraft {
+    gap: 5px 2.5px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .contractInfo {
+    flex-direction: column;
+    align-items: flex-start;
+    background: none;
+    padding: 0;
+    margin-top: 15px;
+  }
+
+  .craftPrice,
+  .itemsNumber {
+    font-size: 16px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+
+  .craftResult {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .itemForCraft {
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contractHistoryItem {
+    padding: 15px 10px;
+  }
+
+  .craftResult {
+    width: 97px;
+    height: 102px;
+
+    & > div {
+      &:nth-of-type(1) {
+        span {
+          font-size: 10px;
+
+          img {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        margin-top: 5px;
+        width: 72px;
+        height: 36px;
+      }
+    }
+
+    p:first-of-type {
+      font-size: 10px;
+      margin-top: auto;
+      padding-top: 0;
+    }
+  }
+
+  .itemsForCraft {
+    grid-template-rows: 50px 50px;
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .contractInfo {
+    margin-top: 10px;
+  }
+
+  .itemsNumber {
+    margin-top: 5px;
+  }
+
+  .items {
+    gap: 5px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+}

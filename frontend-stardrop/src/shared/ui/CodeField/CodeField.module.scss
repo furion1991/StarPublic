@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 75px;
+}
+
+.character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #313790;
+  background: #1a1e5d;
+  font-family: var(--font-exo2);
+  font-size: 30px;
+  font-weight: 800;
+  color: #fff;
+}

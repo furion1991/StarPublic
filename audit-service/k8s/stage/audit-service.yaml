@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: audit-service
+  namespace: stage
+  labels:
+    app: audit-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: audit-service
+  template:
+    metadata:
+      labels:
+        app: audit-service
+    spec:
+      containers:
+        - name: audit-service
+          image: registry.24cases.ru/stardrop1/audit-service:${IMAGE_TAG}
+          ports:
+            - containerPort: 7006
+          envFrom:
+            - secretRef:
+                name: common-env-secret
+      imagePullSecrets:
+        - name: gitlab-regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: audit-service
+  namespace: stage
+spec:
+  selector:
+    app: audit-service
+  ports:
+    - protocol: TCP
+      port: 7006
+      targetPort: 7006
+  type: ClusterIP

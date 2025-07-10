@@ -1,0 +1,44 @@
+name: star-drop-cases
+services:
+  asp_cases:
+    container_name: asp_cases
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    platform: linux/arm64
+    restart: on-failure
+    env_file: ../.env
+    environment:
+      DB_CONNECTION_STRING: Host=${DATABASE_HOST};Port=5432;Database=${DATABASE_NAME};Username=${DATABASE_USER};Password=${DATABASE_PASSWORD};
+    volumes:
+      - ..:/app
+      - ../../DataTransferLib:/DataTransferLib
+      - /app/obj # <- directory won't be mounted
+      - /app/bin # <- directory won't be mounted
+      - /.config
+    working_dir: /app
+    command: ["dotnet", "watch","run", -v, "--urls", "http://*:7004"]
+    networks:
+      - radx
+    ports:
+      - "7004:7004"
+    depends_on:
+      - postgres_cases
+  
+  postgres_cases:
+    image: postgres:17rc1-alpine
+    platform: linux/arm64
+    restart: on-failure
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    networks:
+      - radx
+    expose:
+      - 5432
+    volumes:
+      - ./db:/var/lib/postgresql/data
+
+networks:
+  radx:
+    name: radx
+    external: true

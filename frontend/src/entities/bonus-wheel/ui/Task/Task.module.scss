@@ -1,0 +1,35 @@
+.task {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 14px 14px 12px;
+  border-radius: 15px;
+  background: linear-gradient(180deg, #3464f5 0%, #373abb 100%);
+  box-sizing: border-box;
+
+  p {
+    font-family: var(--font-exo2);
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.checkmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
+  border-radius: 10px;
+  background: #2739ac;
+}
+
+@media screen and (max-width: 500px) {
+  .task {
+    p {
+      font-size: 16px;
+    }
+  }
+}

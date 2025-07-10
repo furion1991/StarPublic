@@ -1,0 +1,26 @@
+.userNameChange {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.changeBtn {
+  padding: 9px 13px;
+  border-radius: 5px;
+  background: #151951;
+  font-size: 13px;
+  font-weight: 900;
+  color: #7c7e9d;
+  text-transform: uppercase;
+}
+
+.textField {
+  background: #141949;
+
+  input {
+    width: 210px;
+    padding: 8px 10px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+}

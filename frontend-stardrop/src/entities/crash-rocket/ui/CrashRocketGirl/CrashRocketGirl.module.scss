@@ -1,0 +1,32 @@
+.bgGirl {
+  position: relative;
+  display: flex;
+  position: absolute;
+  right: 350px;
+  z-index: 1;
+  transition: 1s linear;
+}
+
+@media screen and (max-width: 1024px) {
+  .bgGirl {
+    top: -40px;
+    right: 300px;
+
+    img {
+      width: 578px;
+      height: 230px;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .bgGirl {
+    top: -70px;
+    right: 200px;
+
+    img {
+      width: 367px;
+      height: 146px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 114px;
+  border-radius: 20px 20px 0px 0px;
+  background: linear-gradient(180deg, #343b9d 0%, #2a307e 100%);
+  font-family: var(--font-exo2);
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > h4 {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  & > p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+    color: #8386c6;
+  }
+}
+
+.content {
+  border-radius: 0 0 20px 20px;
+  background: #25296d;
+}

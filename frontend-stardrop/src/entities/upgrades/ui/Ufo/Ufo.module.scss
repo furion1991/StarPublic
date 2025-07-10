@@ -1,0 +1,144 @@
+.ufo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+
+  &Visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &Flipped {
+    transform: scaleX(-1);
+  }
+}
+
+.ufoImg {
+  position: absolute;
+  transition: var(--transition);
+}
+
+.ufoLight {
+  position: absolute;
+  z-index: 1;
+  transition: var(--transition);
+
+  &Hidden {
+    opacity: 0;
+  }
+
+  &:nth-of-type(1) {
+    top: -189px;
+    left: -4px;
+  }
+
+  &:nth-of-type(2) {
+    top: -226px;
+    right: -8px;
+  }
+
+  &:nth-of-type(3) {
+    top: -41px;
+    right: -135px;
+  }
+
+  stop {
+    transition: var(--transition);
+  }
+}
+
+.ufoLightStop {
+  &.red {
+    stop-color: #ee401e;
+  }
+
+  &.green {
+    stop-color: #12dc68;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .ufo {
+    &Img {
+      width: 235px;
+      height: 260px;
+    }
+  }
+
+  .ufoLight {
+    &:nth-of-type(1) {
+      top: -112px;
+      left: 1px;
+      width: 116px;
+      height: 149px;
+    }
+
+    &:nth-of-type(2) {
+      width: 100px;
+      height: 182px;
+      top: -136px;
+      right: -4px;
+    }
+
+    &:nth-of-type(3) {
+      width: 132px;
+      height: 97px;
+
+      top: -24px;
+      right: -80px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ufo {
+    display: flex;
+    justify-content: center;
+
+    &Img {
+      width: 166px;
+      height: 184px;
+    }
+  }
+
+  .ufoLight {
+    &:nth-of-type(1) {
+      top: -89px;
+      left: 29px;
+      width: 89px;
+      height: 115px;
+    }
+
+    &:nth-of-type(2) {
+      width: 77px;
+      height: 140px;
+      top: -105px;
+      right: 27px;
+    }
+
+    &:nth-of-type(3) {
+      width: 102px;
+      height: 74px;
+      top: -22px;
+      right: -31px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ufoLight {
+    &:nth-of-type(1) {
+      left: -15px;
+    }
+
+    &:nth-of-type(2) {
+      right: -17px;
+    }
+
+    &:nth-of-type(3) {
+      right: -76px;
+    }
+  }
+}

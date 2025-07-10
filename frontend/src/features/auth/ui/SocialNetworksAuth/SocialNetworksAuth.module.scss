@@ -1,0 +1,15 @@
+.socialNetworksAuth {
+  display: flex;
+  gap: 16px;
+
+  a,
+  button {
+    display: flex;
+    overflow: hidden;
+    transition: var(--transition);
+
+    &:hover {
+      border-radius: 50%;
+    }
+  }
+}

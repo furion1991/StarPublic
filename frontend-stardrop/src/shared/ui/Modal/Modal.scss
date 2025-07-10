@@ -1,0 +1,14 @@
+.popup-overlay {
+  background: rgba(9, 13, 49, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.popup-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  padding: 0;
+  background: none;
+  border: none;
+}

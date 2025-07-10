@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cases-service
+  namespace: dev
+  labels:
+    app: cases-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cases-service
+  template:
+    metadata:
+      labels:
+        app: cases-service
+    spec:
+      containers:
+        - name: cases-service
+          image: registry.24cases.ru/stardrop1/cases-service:${IMAGE_TAG}
+          ports:
+            - containerPort: 7004
+          envFrom:
+            - secretRef:
+                name: common-env-secret
+      imagePullSecrets:
+        - name: gitlab-regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cases-service
+  namespace: dev
+spec:
+  selector:
+    app: cases-service
+  ports:
+    - protocol: TCP
+      port: 7004
+      targetPort: 7004
+  type: ClusterIP

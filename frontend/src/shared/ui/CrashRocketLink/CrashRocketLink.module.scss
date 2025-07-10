@@ -1,0 +1,33 @@
+.crashRocketLink {
+  position: relative;
+  width: 240px;
+  height: 100px;
+  overflow: hidden;
+  outline: none;
+
+  &:hover {
+    .girlImg {
+      transform: scale(1.1);
+    }
+  }
+
+  &.rounded {
+    border-radius: 10px;
+  }
+
+  span {
+    position: absolute;
+    top: 32px;
+    left: 26px;
+    font-family: var(--font-republica-minor);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 22px;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+}
+
+.girlImg {
+  transition: transform 0.3s;
+}

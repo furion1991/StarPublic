@@ -1,0 +1,121 @@
+.casePage {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1486px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 72px 20px 85px;
+}
+
+.title {
+  text-align: center;
+
+  h1 {
+    font-family: var(--font-exo2);
+    font-size: 37px;
+    font-weight: 900;
+    line-height: 37px;
+  }
+
+  p {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #a7acee;
+  }
+}
+
+.caseOpen {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.caseLoot {
+  margin-top: 75px;
+  width: 100%;
+
+  h2 {
+    text-align: center;
+    font-family: var(--font-exo2);
+    font-size: 26px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+}
+
+.caseLootList {
+  margin-top: 54px;
+}
+
+.caseRoulette,
+.caseRouletteVertical {
+  margin-top: 80px;
+  padding-bottom: 33px;
+}
+
+.caseReopenAcitons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1526px) {
+  .wrapper {
+    box-sizing: border-box;
+  }
+
+  .caseRoulette {
+    height: 312px;
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .caseOpen {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .caseLoot {
+    margin-top: 60px;
+  }
+
+  .caseLootList {
+    margin-top: 40px;
+  }
+
+  .wrapper {
+    padding-top: 53px;
+  }
+
+  .caseReopenAcitons {
+    margin-top: 31px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    padding: 85px 10px 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .caseReopenAcitons {
+    margin-top: 30px;
+  }
+
+  .caseRoulette {
+    height: 170px;
+    padding-bottom: 53px;
+  }
+}

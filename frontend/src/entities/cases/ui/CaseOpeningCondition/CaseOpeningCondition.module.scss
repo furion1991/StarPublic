@@ -1,0 +1,74 @@
+.caseOpeningCondition {
+  button {
+    width: 100%;
+    height: 61px;
+    margin-top: 15px;
+  }
+}
+
+.condition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 82px;
+  border-radius: 15px;
+  background: rgba(174, 69, 113, 0.69);
+  backdrop-filter: blur(2.5px);
+
+  p {
+    font-family: var(--font-exo2);
+    line-height: 19px;
+
+    &:nth-of-type(2) {
+      margin-top: 3px;
+    }
+  }
+
+  &.notAuth {
+    p {
+      &:nth-of-type(1) {
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      &:nth-of-type(2) {
+        font-weight: 600;
+        color: #e1e1e1;
+      }
+    }
+  }
+
+  &.notEnoughtBalance {
+    p {
+      &:nth-of-type(1) {
+        font-size: 19px;
+        font-weight: 600;
+      }
+
+      &:nth-of-type(2) {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.balanceUpLink {
+  button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .caseOpeningCondition {
+    button {
+      height: 55px;
+    }
+  }
+}

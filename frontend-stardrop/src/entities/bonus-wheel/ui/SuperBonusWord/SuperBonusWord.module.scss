@@ -1,0 +1,75 @@
+.superBonusWord {
+  display: flex;
+  gap: 7px;
+}
+
+.letterField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 30px;
+  background: #141949;
+
+  span {
+    font-size: 82px;
+    font-weight: 900;
+    color: #1a1f56;
+    text-shadow: 1px 1px 0px #373b64;
+  }
+
+  &.activated {
+    span {
+      color: #fff;
+      text-shadow: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .superBonusWord {
+    gap: 5px;
+  }
+
+  .letterField {
+    width: 98px;
+    height: 98px;
+
+    span {
+      font-size: 62px;
+    }
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .superBonusWord {
+    gap: 2.28px;
+  }
+
+  .letterField {
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+
+    span {
+      font-size: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .superBonusWord {
+    gap: 2.28px;
+  }
+
+  .letterField {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+
+    span {
+      font-size: 26px;
+    }
+  }
+}

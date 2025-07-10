@@ -1,0 +1,10 @@
+﻿POST https://24cases.ru/api/auth/register
+Content-Type: application/json
+
+{
+  "Email": "furi32113111o1n111911119@gmail.com",
+  "Password": "StrongPassword123.",
+  "Role": "Admin",
+  "Gender": "M",
+  "DateOfBirth": "1991-10-09"
+}

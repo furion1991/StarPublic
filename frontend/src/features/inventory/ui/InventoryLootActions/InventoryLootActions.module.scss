@@ -1,0 +1,61 @@
+.inventoryLootActions {
+  display: flex;
+
+  button {
+    padding: 17px 26.5px;
+    font-size: 18px;
+    line-height: 16px;
+
+    &:nth-of-type(1) {
+      margin-left: 50px;
+    }
+
+    &:nth-of-type(2) {
+      margin-left: 15px;
+    }
+  }
+}
+
+.canSellFilter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1305px) {
+  .inventoryLootActions {
+    button {
+      &:nth-of-type(1) {
+        margin-left: 0;
+        order: 1;
+      }
+
+      &:nth-of-type(2) {
+        order: 2;
+      }
+    }
+  }
+
+  .canSellFilter {
+    order: 3;
+    margin-left: 33px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .inventoryLootActions {
+    flex-wrap: wrap;
+    gap: 30px 15px;
+
+    button {
+      &:nth-of-type(2) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .canSellFilter {
+    margin-left: 0;
+  }
+}

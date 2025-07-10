@@ -1,0 +1,164 @@
+.userEntry {
+  display: flex;
+}
+
+.authBtn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 19px;
+  line-height: 19px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  min-width: 200px;
+  padding: 8px 12px;
+  border-radius: 25px;
+  background: #353ba8;
+  box-shadow: 0px 16px 13.7px -10px rgba(0, 0, 0, 0.2);
+
+  &.asLink {
+    display: none;
+    margin-left: 5px;
+  }
+}
+
+.balanceUpLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(92, 32, 124, 0.75);
+
+  &.separated {
+    display: none;
+  }
+}
+
+.balance {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 7.9px -6px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px; /* border length  */
+    background: linear-gradient(180deg, #fe80ff 0%, rgba(76, 78, 234, 0.3) 100%);
+    border-radius: inherit;
+    mask: conic-gradient(#000 0 0) content-box exclude, conic-gradient(#000 0 0);
+  }
+}
+
+.userLink {
+  display: none;
+}
+
+@media screen and (max-width: 1250px) {
+  .authBtn {
+    width: 200px;
+    height: 63px;
+    text-shadow: 0px 2.056px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  .navPopup {
+    margin-top: 15px;
+  }
+
+  .user {
+    display: none;
+
+    &.asLink {
+      display: flex;
+    }
+  }
+
+  .navPopup {
+    display: none;
+  }
+
+  .userEntry {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .user {
+    &.asLink {
+      display: flex;
+
+      .balanceUpLink {
+        display: none;
+      }
+    }
+  }
+
+  .balanceUpLink.separated {
+    display: flex;
+  }
+
+  .balance {
+    font-size: 12px;
+
+    img {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  .user {
+    min-width: 90px;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .avatar {
+    width: 23px;
+    height: 23px;
+
+    &::before {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .authBtn {
+    width: 83px;
+    height: 34px;
+    gap: 7.5px;
+    font-size: 10.5px;
+
+    span {
+      display: flex;
+
+      img {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}

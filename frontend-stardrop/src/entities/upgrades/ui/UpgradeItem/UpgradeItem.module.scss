@@ -1,0 +1,143 @@
+.upgradeItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 20px;
+  background: #161953;
+}
+
+.titles {
+  display: flex;
+  gap: 52px;
+  margin-top: 18px;
+  padding: 0 25px;
+
+  & > div {
+    width: 50%;
+  }
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 20px;
+  padding: 0 25px;
+}
+
+.columnTitle {
+  font-family: var(--font-exo2);
+  font-weight: 600;
+  text-align: center;
+  color: #989aaf;
+}
+
+.loot {
+  padding: 10px 10px 20px;
+  font-size: 13.485px;
+
+  // image container
+  & > div:nth-of-type(2) {
+    max-width: 123px;
+    height: 62px;
+  }
+
+  p {
+    font-size: 13.485px;
+
+    &:nth-of-type(1) {
+      margin-top: 12px;
+    }
+  }
+}
+
+.upgradeInfo {
+  display: flex;
+  margin-top: 22px;
+}
+
+.chance,
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68px;
+  width: 50%;
+}
+
+.chance {
+  p {
+    font-family: var(--font-exo2);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    .chanceValue {
+      font-weight: 900;
+      color: #fd5;
+      font-family: var(--font-exo);
+    }
+  }
+}
+
+.result {
+  border-radius: 0px 18px 18px 0px;
+
+  p {
+    font-family: var(--font-exo2);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  &.success {
+    background: linear-gradient(180deg, rgba(24, 27, 87, 0) 0%, #2f5156 100%);
+
+    p {
+      color: #a0fe2c;
+    }
+  }
+
+  &.failure {
+    background: linear-gradient(180deg, rgba(24, 27, 87, 0) 0%, rgba(254, 44, 72, 0.25) 100%);
+
+    p {
+      color: #dd6b89;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .titles {
+    padding: 0 10px;
+    margin-top: 15px;
+  }
+
+  .items {
+    gap: 5px;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+
+  .chance,
+  .result {
+    height: 43px;
+  }
+
+  .upgradeInfo {
+    margin-top: 0;
+  }
+
+  .result {
+    border-radius: 0px 0 18px 0px;
+  }
+
+  .loot {
+    padding: 10px 5px;
+    border-radius: 15px;
+
+    & > p {
+      padding-top: 0;
+    }
+  }
+}

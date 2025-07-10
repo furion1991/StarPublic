@@ -1,0 +1,76 @@
+.winnersHistory {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.labels {
+  display: grid;
+  grid-template-columns: 1fr 55px 65px 60px;
+  width: 100%;
+  padding: 0 18px;
+  box-sizing: border-box;
+
+  span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #5f66b1;
+  }
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 5.6px;
+  margin-top: 10px;
+
+  li {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 55px 65px 60px;
+    height: 67px;
+    padding: 0 18px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 900;
+    box-sizing: border-box;
+
+    &.common {
+      background: var(--loot-common-gradient);
+    }
+
+    &.rare {
+      background: var(--loot-rare-gradient);
+    }
+
+    &.superRare {
+      background: var(--loot-super-rare-gradient);
+    }
+
+    &.epic {
+      background: var(--loot-epic-gradient);
+    }
+
+    &.mythical {
+      background: var(--loot-mythical-gradient);
+    }
+
+    &.legendary {
+      background: var(--loot-legendary-gradient);
+    }
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
+  span {
+    font-weight: 700;
+  }
+}
+
+.prize {
+  color: #fd5;
+}

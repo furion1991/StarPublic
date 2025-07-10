@@ -1,0 +1,53 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  IMAGE_TAG: $CI_COMMIT_SHORT_SHA
+  IMAGE_NAME: registry.24cases.ru/stardrop1/frontend-stardrop
+  DEPLOY_HOST: furion1991@195.230.23.100
+
+before_script:
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh-keyscan -H 195.230.23.100 >> ~/.ssh/known_hosts
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" $CI_REGISTRY --password-stdin
+build:
+  stage: build
+  script:
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG --no-cache .
+    - docker push $IMAGE_NAME:$IMAGE_TAG
+
+deploy-dev:
+  stage: deploy
+  environment: dev
+  script:
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - envsubst < ./k8s/dev/frontend-stardrop.yaml > ./k8s/dev/frontend-stardrop.generated.yaml
+    - scp ./k8s/dev/frontend-stardrop.generated.yaml $DEPLOY_HOST:/tmp/frontend-stardrop.yaml
+    - ssh $DEPLOY_HOST "kubectl apply -f /tmp/frontend-stardrop.yaml --namespace=dev"
+  only:
+    - dev
+
+deploy-stage:
+  stage: deploy
+  environment: stage
+  script:
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - envsubst < ./k8s/stage/frontend-stardrop.yaml > ./k8s/stage/frontend-stardrop.generated.yaml
+    - scp ./k8s/stage/frontend-stardrop.generated.yaml $DEPLOY_HOST:/tmp/frontend-stardrop.yaml
+    - ssh $DEPLOY_HOST "kubectl apply -f /tmp/frontend-stardrop.yaml --namespace=stage"
+  only:
+    - stage
+
+deploy-prod:
+  stage: deploy
+  environment: production
+  script:
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - envsubst < ./k8s/prod/frontend-stardrop.yaml > ./k8s/prod/frontend-stardrop.generated.yaml
+    - scp ./k8s/prod/frontend-stardrop.generated.yaml $DEPLOY_HOST:/tmp/frontend-stardrop.yaml
+    - ssh $DEPLOY_HOST "kubectl apply -f /tmp/frontend-stardrop.yaml --namespace=prod"
+  only:
+    - main

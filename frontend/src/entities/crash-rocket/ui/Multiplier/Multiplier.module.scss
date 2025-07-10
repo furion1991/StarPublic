@@ -1,0 +1,47 @@
+.multiplier {
+  position: relative;
+  padding: 0 8.5px 23.1px 28.39px;
+}
+
+.label,
+.value {
+  position: relative;
+  z-index: 10;
+}
+
+.label {
+  padding-left: 33.6px;
+  font-size: 21px;
+  font-weight: 900;
+  transform: rotate(6deg);
+}
+
+.value {
+  margin-top: 20px;
+  font-size: 77px;
+  font-weight: 900;
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.bgColor {
+  &.purple {
+    stop-color: #5c1ad9;
+  }
+
+  &.green {
+    stop-color: #579e1c;
+  }
+
+  &.yellow {
+    stop-color: #d3b51a;
+  }
+
+  &.red {
+    stop-color: #ac2251;
+  }
+}

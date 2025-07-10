@@ -1,0 +1,237 @@
+.caseRouletteVertical {
+  position: relative;
+  max-width: 1486px;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  gap: 20px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.roulette {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 312px;
+}
+
+.lootItem {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 312px;
+  border-radius: 15px;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+  transition: 1s transform;
+
+  &.dropped {
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  & > img {
+    margin-top: 56px;
+  }
+
+  p {
+    margin-top: auto;
+    font-family: var(--font-exo2);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.triangles {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  width: 100%;
+  margin-top: -14px;
+  z-index: 10;
+}
+
+.triangle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+
+  &Top {
+    left: -14px;
+  }
+
+  &Bottom {
+    right: -14px;
+    transform: rotate(180deg);
+  }
+}
+
+.sellPriceContainer {
+  position: absolute;
+  top: 20px;
+
+  span {
+    align-items: flex-start;
+    font-family: var(--font-exo2);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 16px;
+  }
+}
+
+.sellBtnContainer {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: auto;
+}
+
+.sellBtn {
+  max-width: 300px;
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: 700;
+  z-index: 15;
+
+  img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1526px) {
+  .caseRouletteVertical {
+    position: relative;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    gap: 10px;
+  }
+
+  .lootItem {
+    padding: 0 8px 10px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    height: 250px;
+  }
+
+  .lootItem {
+    min-height: auto;
+    height: 250px;
+
+    & > img {
+      width: 100px;
+      height: 100px;
+      margin-top: 40px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .sellPriceContainer {
+    top: 15px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    gap: 5px;
+    height: 210px;
+  }
+
+  .lootItem {
+    height: 210px;
+
+    p {
+      font-size: 14px;
+      -webkit-line-clamp: 1;
+    }
+
+    & > img {
+      width: 75px;
+      height: 75px;
+      margin-top: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .lootItem {
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    height: 150px;
+    gap: 3px;
+  }
+
+  .lootItem {
+    height: 150px;
+    padding: 0 0 10px;
+
+    &.dropped p,
+    p {
+      display: none;
+    }
+
+    & > img {
+      width: 50px;
+      height: 50px;
+      margin-top: 30px;
+    }
+  }
+
+  .sellPriceContainer {
+    display: flex;
+    justify-content: center;
+    top: 10px;
+    right: auto;
+
+    span {
+      font-size: 12px;
+      line-height: 10px;
+    }
+
+    img {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  .sellBtn {
+    max-width: 40px;
+    text-indent: -9999px;
+    padding: 0;
+
+    img {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.placeholder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-exo);
+  font-size: 16px;
+  font-weight: 700;
+  color: #666999;
+
+  &Country {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    span {
+      color: #fff;
+    }
+  }
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 35px;
+  cursor: pointer;
+  background: transparent;
+}

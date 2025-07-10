@@ -1,0 +1,29 @@
+.lootRarityBox {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  &.common {
+    background: var(--loot-common-gradient);
+  }
+
+  &.rare {
+    background: var(--loot-rare-gradient);
+  }
+
+  &.superRare {
+    background: var(--loot-super-rare-gradient);
+  }
+
+  &.epic {
+    background: var(--loot-epic-gradient);
+  }
+
+  &.mythical {
+    background: var(--loot-mythical-gradient);
+  }
+
+  &.legendary {
+    background: var(--loot-legendary-gradient);
+  }
+}

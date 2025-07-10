@@ -1,0 +1,46 @@
+.caseLootList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(auto, 269px));
+  grid-template-rows: repeat(auto-fit, minmax(227px, auto));
+  gap: 30px 35px;
+}
+
+.lootItem {
+  padding: 12px 25px 23px;
+  min-height: 217px;
+
+  & > p {
+    margin-bottom: auto;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .caseLootList {
+    grid-template-columns: repeat(4, minmax(auto, 269px));
+    gap: 20px 15px;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .caseLootList {
+    grid-template-columns: repeat(3, minmax(172px, 269px));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .caseLootList {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fit, 172px);
+    gap: 5px;
+  }
+
+  .lootItem {
+    min-height: 172px;
+    padding: 10px 10px 15px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

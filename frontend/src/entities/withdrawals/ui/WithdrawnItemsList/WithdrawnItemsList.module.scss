@@ -1,0 +1,73 @@
+.withdrawnItemsList {
+  padding: 30px 35px 35px;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px 29px;
+}
+
+.infoBottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(22, 25, 83, 0.5);
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 1320px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .withdrawnItemsList {
+    padding: 17.5px 20px 20px;
+  }
+
+  .list {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .withdrawnItemsList {
+    margin-top: 25px;
+    padding: 0;
+  }
+
+  .infoItem {
+    width: 100%;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .infoBottom {
+    margin-top: 20px;
+  }
+
+  .infoItem {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+}

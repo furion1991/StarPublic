@@ -1,0 +1,23 @@
+.priceWithCurrency {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  &.orange {
+    color: #e68575;
+
+    svg {
+      path {
+        fill: #e68575;
+        stroke: #e68575;
+      }
+    }
+  }
+
+  svg {
+    path {
+      fill: #fff;
+      stroke: #fff;
+    }
+  }
+}

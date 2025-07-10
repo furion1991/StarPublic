@@ -1,0 +1,24 @@
+.idCopier {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 2.5px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #141949;
+  font-size: 14px;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    width: 82px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  button {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+}

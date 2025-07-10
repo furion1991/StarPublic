@@ -1,0 +1,88 @@
+.crashRocketActions {
+  position: relative;
+  width: 1131px;
+  height: 189px;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 28px 41px 24px 33px;
+  box-sizing: border-box;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 273px;
+    height: 62px;
+    margin-left: 36px;
+    margin-right: 33px;
+  }
+}
+
+.actionPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 360px;
+  padding: 24px 25px 24px 40px;
+  box-sizing: border-box;
+
+  &:last-of-type {
+    padding-left: 25px;
+    padding-right: 40px;
+  }
+}
+
+.value {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.autoStopSwitch {
+  width: 50px;
+  height: 30px;
+
+  input:checked + span {
+    background: #1f2062;
+
+    &::before {
+      left: 25.5px;
+    }
+  }
+
+  span {
+    background: #1f2062;
+
+    &::before {
+      top: 6px;
+    }
+  }
+}

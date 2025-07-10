@@ -1,0 +1,58 @@
+.userAgreementPage {
+  p {
+    line-height: 25px;
+    color: #bcc0fa;
+  }
+}
+
+.wrapper {
+  max-width: 890px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 85px 0;
+  text-align: center;
+}
+
+.main {
+  h1 {
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 30px;
+    color: #fff;
+  }
+}
+
+.terms {
+  margin-top: 60px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: 900;
+    color: #8381ff;
+  }
+
+  p {
+    margin-top: 20px;
+  }
+}
+
+.otherSections {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 45px;
+
+  div {
+    h3 {
+      font-weight: 900;
+    }
+
+    p {
+      margin-top: 15px;
+    }
+  }
+}

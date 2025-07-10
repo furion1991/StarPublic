@@ -1,0 +1,23 @@
+.caseBeforeOpen {
+  display: flex;
+}
+
+.caseOpeningCondition {
+  position: relative;
+  margin: -40px auto 0;
+  max-width: 396px;
+  width: 100%;
+  z-index: 10;
+}
+
+.caseOpenActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 670px) {
+  .caseOpeningCondition {
+    margin: 10px auto 0;
+  }
+}

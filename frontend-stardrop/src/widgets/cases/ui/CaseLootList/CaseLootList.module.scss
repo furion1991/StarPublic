@@ -1,0 +1,88 @@
+.caseLootList {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(auto, 269px));
+  grid-template-rows: repeat(auto-fit, minmax(227px, auto));
+  gap: 30px 35px;
+
+  li {
+    position: relative;
+
+    &:hover {
+      .lootItemDetails {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.lootItemDetails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background: rgba(27, 32, 90, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+
+  p {
+    font-family: var(--font-exo2);
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  span {
+    flex-direction: row-reverse;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+}
+
+.lootItem {
+  padding: 12px 25px 23px;
+  min-height: 217px;
+
+  & > p {
+    margin-bottom: auto;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .caseLootList {
+    grid-template-columns: repeat(4, minmax(auto, 269px));
+    gap: 20px 15px;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .caseLootList {
+    grid-template-columns: repeat(3, minmax(172px, 269px));
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .caseLootList {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto-fit, 172px);
+    gap: 5px;
+  }
+
+  .lootItem {
+    min-height: 172px;
+    padding: 10px 10px 15px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.multipliersHistory {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 72px;
+    height: 36px;
+    border-radius: 5px;
+
+    &.common {
+      background: var(--loot-common-gradient);
+    }
+
+    &.rare {
+      background: var(--loot-rare-gradient);
+    }
+
+    &.superRare {
+      background: var(--loot-super-rare-gradient);
+    }
+
+    &.epic {
+      background: var(--loot-epic-gradient);
+    }
+
+    &.mythical {
+      background: var(--loot-mythical-gradient);
+    }
+
+    &.legendary {
+      background: var(--loot-legendary-gradient);
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 900;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .multipliersHistory {
+    li {
+      min-width: 60px;
+      height: 30px;
+      border-radius: 3.829px;
+
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+}

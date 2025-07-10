@@ -1,0 +1,175 @@
+.latestOpenCasesList {
+  display: flex;
+  gap: 2px;
+  overflow-x: hidden;
+
+  & > div {
+    flex-shrink: 0;
+  }
+}
+
+.lastOpenedCaseItem {
+  --loot-common-gradient: linear-gradient(180deg, #373a75, #656d8d 100%);
+  --loot-rare-gradient: linear-gradient(180deg, #163546, #649f2a 100%);
+  --loot-super-rare-gradient: linear-gradient(180deg, #21244f, #0f61c5 100%);
+  --loot-epic-gradient: linear-gradient(180deg, #302356, #7d2da3 100%);
+  --loot-mythical-gradient: linear-gradient(180deg, #370b35, #bc2d50 100%);
+  --loot-legendary-gradient: linear-gradient(180deg, #946d0a, #c9b500 100%);
+
+  --loot-common-color: #5c6388;
+  --loot-rare-color: #59a01c;
+  --loot-super-rare-color: #2d70d3;
+  --loot-epic-color: #7943f2;
+  --loot-mythical-color: #9e254a;
+  --loot-legendary-color: #c1ab01;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 169px;
+  height: 104px;
+  overflow: hidden;
+
+  // bottom circles left & right
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 3.99px;
+    border-radius: 0 0 100px 100px;
+    background: red;
+    z-index: 1;
+  }
+
+  &::before {
+    transform: rotate(35deg);
+    left: 3px;
+    top: 99.27px;
+  }
+
+  &::after {
+    right: 3px;
+    top: 99.27px;
+    transform: rotate(-35deg);
+  }
+
+  &.common {
+    background: var(--loot-common-gradient);
+
+    &::before,
+    &::after {
+      background: var(--loot-common-color);
+    }
+  }
+
+  &.rare {
+    background: var(--loot-rare-gradient);
+
+    &::before,
+    &::after {
+      background: var(--loot-rare-color);
+    }
+  }
+
+  &.superRare {
+    background: var(--loot-super-rare-gradient);
+
+    &::before,
+    &::after {
+      background: var(--loot-super-rare-color);
+    }
+  }
+
+  &.epic {
+    background: var(--loot-epic-gradient);
+
+    &::before,
+    &::after {
+      background: var(--loot-epic-color);
+    }
+  }
+
+  &.mythical {
+    background: var(--loot-mythical-gradient);
+
+    &::before,
+    &::after {
+      background: var(--loot-mythical-color);
+    }
+  }
+
+  &.legendary {
+    background: var(--loot-legendary-gradient);
+
+    &::before,
+    &::after {
+      background: var(--loot-legendary-color);
+    }
+  }
+
+  p {
+    width: 139px;
+    margin-top: 5px;
+    font-family: var(--font-exo2);
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 0 15px;
+  }
+}
+
+.image {
+  margin-top: 15px;
+}
+
+.angleCut {
+  position: absolute;
+  bottom: -5px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 14px 14px 0;
+  border-color: #090a1f transparent transparent transparent;
+
+  &.left {
+    transform: rotate(35deg);
+    left: -10px;
+  }
+
+  &.right {
+    right: -10px;
+    transform: rotate(-35deg);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .lastOpenedCaseItem {
+    width: 100px;
+    height: 62px;
+
+    &::before,
+    &::after {
+      top: 58px;
+    }
+
+    p {
+      font-size: 8px;
+      width: 70px;
+      padding: 0;
+    }
+  }
+
+  .image {
+    margin-top: 8px;
+
+    img {
+      width: 31px;
+      height: 31px;
+    }
+  }
+}

@@ -1,0 +1,264 @@
+.questsPage {
+  position: relative;
+  display: flex;
+  min-height: 1081px;
+}
+
+.pageActions {
+  position: absolute;
+  top: 81px;
+  width: 100%;
+
+  & > div {
+    margin-top: 0;
+  }
+}
+
+.wrapper {
+  max-width: 1820px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 53px 50px 65px;
+}
+
+.mainBgImg {
+  position: absolute;
+  top: 127px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.currentPointsNumber {
+  max-width: 365px;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 150px;
+  margin-right: 90px;
+}
+
+.heading {
+  margin: 24px 10px 0;
+
+  h1,
+  h2,
+  p {
+    text-align: center;
+  }
+
+  h1 {
+    font-family: var(--font-exo2);
+    font-size: 37px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #b0b5ef;
+  }
+}
+
+.giveawayEndTime {
+  & > p {
+    margin-bottom: 17px;
+    font-size: 18px;
+    color: #b0b5ef;
+    text-align: center;
+  }
+}
+
+.authBtn {
+  margin: 600px auto 0;
+  max-width: 370px;
+  width: 100%;
+  height: 76px;
+}
+
+.quests {
+  margin-top: 445px;
+}
+
+.leaderboard {
+  margin-top: 70px;
+}
+
+@media screen and (max-width: 1400px) {
+  .mainBgImg {
+    top: 86px;
+    width: 1024px;
+    height: 642px;
+  }
+
+  .currentPointsNumber,
+  .giveawayEndTime {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .currentPointsNumber {
+    left: 0;
+  }
+
+  .giveawayEndTime {
+    right: 0;
+  }
+
+  .top {
+    position: relative;
+    justify-content: center;
+    height: 580px;
+    margin: 0;
+  }
+
+  .quests {
+    margin-top: 40px;
+  }
+
+  .authBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
+  }
+
+  .wrapper {
+    padding: 67px 20px 70px;
+  }
+
+  .questsPage {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .leaderboard {
+    margin-top: 55px;
+  }
+
+  .heading {
+    margin: 0;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+  }
+
+  .pageActions {
+    top: 60px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .wrapper {
+    padding-top: 130px;
+  }
+
+  .heading {
+    h2,
+    p {
+      display: none;
+    }
+  }
+
+  .currentPointsNumber,
+  .giveawayEndTime {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .giveawayEndTime {
+    display: flex;
+    justify-content: center;
+    bottom: 125px;
+    width: 100%;
+
+    & > p {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    padding: 130px 10px 40px;
+  }
+
+  .heading {
+    h1 {
+      font-size: 24px;
+    }
+  }
+
+  .mainBgImg {
+    top: 156px;
+    width: 595px;
+    height: 305px;
+  }
+
+  .top {
+    height: 437px;
+  }
+
+  .quests {
+    margin-top: 30px;
+  }
+
+  .leaderboard {
+    margin-top: 30px;
+  }
+
+  .authBtn {
+    position: static;
+    max-width: 355px;
+    margin-top: 40px;
+    height: 55px;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .giveawayEndTime {
+    & > div {
+      gap: 10px;
+
+      & > div {
+        width: 78px;
+        height: 78px;
+        border-radius: 18px;
+      }
+
+      p {
+        &:nth-of-type(1) {
+          font-size: 33px;
+        }
+
+        &:nth-of-type(2) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

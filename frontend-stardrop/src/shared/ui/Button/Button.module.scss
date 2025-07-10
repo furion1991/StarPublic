@@ -1,0 +1,79 @@
+@property --button-gradient-start {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #f18c73;
+}
+
+@property --button-gradient-end {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #c743a4;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    var(--button-gradient-start) 0%,
+    var(--button-gradient-end) 100%
+  );
+  border-radius: var(--button-br-normal);
+  padding: 10px;
+  font-family: var(--font-exo2);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 19px;
+  text-transform: uppercase;
+  transition: all var(--transition), --button-gradient-start var(--transition),
+    --button-gradient-end var(--transition);
+  z-index: 1;
+
+  &:hover {
+    --button-gradient-start: #e7795b;
+    --button-gradient-end: #a92785;
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.brMedium {
+    border-radius: var(--button-br-medium);
+
+    &::before {
+      border-radius: var(--button-br-medium);
+    }
+  }
+
+  &.purple {
+    --button-gradient-start: #e171e3;
+    --button-gradient-end: #8332ed;
+
+    &:hover {
+      --button-gradient-start: #a931ab;
+      --button-gradient-end: #49158d;
+    }
+  }
+
+  &.cyan {
+    --button-gradient-start: #64f5df;
+    --button-gradient-end: #41619d;
+
+    &:hover {
+      --button-gradient-start: #55afa1;
+      --button-gradient-end: #274479;
+    }
+  }
+
+  &.boxShadow {
+    box-shadow: var(--button-box-shadow);
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+}

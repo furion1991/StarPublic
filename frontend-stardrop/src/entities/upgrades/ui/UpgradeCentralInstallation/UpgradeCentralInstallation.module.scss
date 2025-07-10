@@ -1,0 +1,80 @@
+.upgradeCentralInstallation {
+  position: absolute;
+  width: 781px;
+  height: 847px;
+  z-index: 15;
+}
+
+.stateImg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 184px;
+  left: 50%;
+  width: 235px;
+  height: 236px;
+  transform: translateX(-50%);
+
+  img {
+    position: absolute;
+
+    &:not(.explosionImg) {
+      width: 100%;
+      height: 100%;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      opacity: 0;
+    }
+  }
+
+  &.resultImgVisible {
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .upgradeCentralInstallation {
+    width: 650px;
+    height: 705px;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .stateImg {
+    top: 152px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .explosionImg {
+    width: 310px;
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .upgradeCentralInstallation {
+    width: 524px;
+    height: 569px;
+  }
+
+  .stateImg {
+    top: 128px;
+    width: 160px;
+    height: 160px;
+  }
+
+  .explosionImg {
+    width: 240px;
+    height: 250px;
+  }
+}

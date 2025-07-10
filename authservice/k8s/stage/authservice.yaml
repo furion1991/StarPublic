@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: authservice
+  namespace: stage
+  labels:
+    app: authservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authservice
+  template:
+    metadata:
+      labels:
+        app: authservice
+    spec:
+      containers:
+        - name: authservice
+          image: registry.24cases.ru/stardrop1/authservice:${IMAGE_TAG}
+          ports:
+            - containerPort: 7002
+          envFrom:
+            - secretRef:
+                name: common-env-secret
+      imagePullSecrets:
+        - name: gitlab-regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authservice
+  namespace: stage
+spec:
+  selector:
+    app: authservice
+  ports:
+    - protocol: TCP
+      port: 7002
+      targetPort: 7002
+  type: ClusterIP

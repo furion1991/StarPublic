@@ -1,0 +1,33 @@
+.pageActions {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 52px;
+  padding-left: 35px;
+  padding-right: 62px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+@media screen and (max-width: 1024px) {
+  .pageActions {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 40px;
+  }
+
+  .linkBack {
+    width: 155px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .pageActions {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,36 @@
+:root {
+  --background-color: #090d31;
+
+  --text-color: #fff;
+
+  --color-pink: #b24892;
+  --color-error: #d76090;
+
+  /* GRADIENTS */
+  --gradient-pink: linear-gradient(180deg, #f18c73, #c743a4 100%);
+  --gradient-purple: linear-gradient(180deg, #e171e3 0%, #8332ed 100%);
+  --gradient-cyan: linear-gradient(180deg, #64f5df, #41619d 100%);
+  --gradient-blue: linear-gradient(180deg, #3658f7, #5541c2 100%);
+
+  /* BUTTONS */
+  --button-br-normal: 10px;
+  --button-br-medium: 15px;
+  --button-box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 13px 13.3px 0px rgba(0, 0, 0, 0.05);
+
+  /* LOOT GRADIENTS */
+  --loot-common-gradient: linear-gradient(180deg, #373a75, #656d8d 100%);
+  --loot-rare-gradient: linear-gradient(180deg, #3a7a18, #68b31e 100%);
+  --loot-super-rare-gradient: linear-gradient(180deg, #373e96, #2b80e6 100%);
+  --loot-epic-gradient: linear-gradient(180deg, #7715a6, #b015ec 100%);
+  --loot-mythical-gradient: linear-gradient(180deg, #66154f, #d12a52 100%);
+  --loot-legendary-gradient: linear-gradient(180deg, #b78a18, #e6d11c 100%);
+
+  --transition: 0.2s ease-in-out;
+
+  --footer-bg-gradient: linear-gradient(
+    179.31deg,
+    rgba(9, 13, 49, 0.62) 1.842%,
+    rgb(47, 56, 159) 81.495%
+  );
+}

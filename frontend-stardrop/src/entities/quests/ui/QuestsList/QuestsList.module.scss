@@ -1,0 +1,29 @@
+.questsList {
+  display: flex;
+  gap: 35px;
+
+  li {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .questsList {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 15px;
+
+    li {
+      width: 316px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .questsList {
+    li {
+      max-width: 355px;
+      width: 100%;
+    }
+  }
+}

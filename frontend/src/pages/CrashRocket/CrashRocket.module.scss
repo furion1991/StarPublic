@@ -1,0 +1,88 @@
+.crashRocketPage {
+  h1 {
+    font-size: 37px;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 0px 4px 0px #3d5a95;
+    text-transform: uppercase;
+  }
+}
+
+.wrapper {
+  max-width: 1767px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 75px;
+  padding-bottom: 38px;
+}
+
+.content {
+  display: flex;
+  gap: 55px;
+  margin-top: 84px;
+}
+
+.left {
+  max-width: 427px;
+  width: 100%;
+}
+
+.stats {
+  display: flex;
+  gap: 9px;
+  flex-basis: 209px;
+}
+
+.onlineNumber,
+.totalBetsValue {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 209px;
+  height: 83px;
+
+  & > * {
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.statsBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.onlineNumber {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  p {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.circle {
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  background: #13c980;
+}
+
+.onlineNumberValue {
+  font-weight: 900;
+  color: #2ceda9;
+}
+
+.totalBetsValue {
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.winnersHistory {
+  margin-top: 45px;
+}

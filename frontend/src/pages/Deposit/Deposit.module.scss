@@ -1,0 +1,153 @@
+.depositPage {
+  display: flex;
+  padding-top: 85px;
+  padding-bottom: 55px;
+}
+
+.wrapper {
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container {
+  width: 100%;
+  padding: 50px 50px 40px;
+  border-radius: 25px;
+  background: #1b1f5e;
+  box-sizing: border-box;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 24px;
+  }
+}
+
+.content {
+  display: flex;
+  gap: 68px;
+  margin-top: 30px;
+}
+
+.contentLeft,
+.contentRight {
+  width: 100%;
+}
+
+.paymentOptions {
+  margin-top: 19px;
+}
+
+.selectedPaymentOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px 45px;
+  border-radius: 10px;
+  background: #20256e;
+  box-sizing: border-box;
+}
+
+.selectedPaymentOptionName {
+  p {
+    font-weight: 700;
+
+    &:nth-of-type(1) {
+      color: #7d82cd;
+    }
+
+    &:nth-of-type(2) {
+      margin-top: 10px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.promocode,
+.payment {
+  margin-top: 20px;
+}
+
+.minAmount {
+  text-align: center;
+  color: #7d82cd;
+  margin-top: 30px;
+
+  span {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .depositPage {
+    padding-top: 30px;
+    padding-bottom: 87px;
+  }
+
+  .container {
+    padding: 30px 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 35px;
+  }
+
+  .minAmount {
+    text-align: left;
+    margin-top: 20px;
+  }
+
+  .selectedPaymentOption {
+    padding: 25px 20px;
+  }
+
+  .selectedPaymentOptionName {
+    display: flex;
+    gap: 13px;
+
+    p {
+      &:nth-of-type(2) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .selectedPaymentOption {
+    display: none;
+  }
+
+  .content {
+    gap: 40px;
+  }
+
+  .promocode {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 0;
+    background: none;
+  }
+
+  .wrapper {
+    padding: 0 10px;
+  }
+
+  .depositPage {
+    padding: 40px 0;
+  }
+}

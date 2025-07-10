@@ -1,0 +1,277 @@
+.crashRocketMainScreen {
+  position: relative;
+  width: 100%;
+  max-width: 1285px;
+  height: 553px;
+}
+
+.mainBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.multipliersHistory {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.multiplier {
+  position: absolute;
+  top: 129px;
+  left: 77px;
+  z-index: 2;
+}
+
+@keyframes ballUpDown {
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(30px);
+  }
+}
+
+.bgBall {
+  position: absolute;
+  bottom: 147px;
+  right: -5px;
+  animation: ballUpDown 3s ease-in infinite alternate;
+  z-index: 1;
+}
+
+.actions {
+  position: absolute;
+  left: 50%;
+  bottom: -150px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.nextRoundAwait {
+  position: absolute;
+  top: 121px;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 321px;
+  font-family: var(--font-exo2);
+  font-size: 24px;
+  font-weight: 900;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  .countdown {
+    margin-top: 19px;
+    text-align: center;
+    font-weight: 700;
+  }
+}
+
+.rocket {
+  position: relative;
+  display: flex;
+}
+
+@keyframes rocketRevealHalf-1 {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  }
+
+  100% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 63%, 0 63%);
+  }
+}
+
+@keyframes rocketRevealHalf-2 {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 37%, 0 37%);
+  }
+
+  100% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+  }
+}
+
+.rocketFilled {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  animation: rocketRevealHalf-1 5s linear infinite, rocketRevealHalf-2 5s linear infinite 5s;
+}
+
+.nextRoundLabel {
+  position: absolute;
+  top: 130px;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.prize {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+@media screen and (max-width: 1620px) {
+  .crashRocketMainScreen {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .bgBall {
+    width: 83px;
+    height: 81px;
+    bottom: 112px;
+    right: -4px;
+  }
+
+  .actions {
+    bottom: -128px;
+  }
+
+  .crashRocketMainScreen {
+    height: 423px;
+  }
+
+  .mainBg {
+    height: 100%;
+  }
+
+  .multiplier {
+    top: 100px;
+    left: 60px;
+  }
+
+  .prize {
+    top: auto;
+    bottom: 30px;
+    transform: translateX(-50%);
+  }
+
+  .nextRoundAwait {
+    top: 91px;
+    width: 354px;
+    font-size: 20px;
+
+    img {
+      width: 72px;
+      height: 220px;
+    }
+
+    .countdown {
+      margin-top: 15px;
+      font-size: 24px;
+    }
+  }
+
+  .nextRoundLabel {
+    top: 102px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .prize {
+    top: 55px;
+  }
+
+  .multipliersHistory {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    padding: 55px 20px 20px;
+  }
+
+  .crashRocketMainScreen {
+    height: 478px;
+  }
+
+  .mainBg {
+    top: auto;
+    bottom: 0;
+    height: calc(100% - 55px);
+  }
+
+  .nextRoundAwait {
+    top: calc(50% + 27.5px);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .actions {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .crashRocketMainScreen {
+    height: 275px;
+  }
+
+  .content {
+    margin-top: 0;
+  }
+
+  .bgBall {
+    display: none;
+  }
+
+  .multiplier {
+    top: 100px;
+    left: 10px;
+  }
+
+  .prize {
+    top: auto;
+    bottom: 0;
+  }
+
+  .nextRoundAwait {
+    width: 100%;
+
+    img {
+      width: 68px;
+      height: 207px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: -10px;
+    }
+
+    .countdown {
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+      font-size: 16px;
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.resendCodeRow {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  button,
+  p {
+    font-family: var(--font-exo2);
+    font-size: 19px;
+    font-weight: 600;
+  }
+}
+
+.resendCode {
+  text-align: center;
+  color: #5a5ea6;
+  font-weight: 400;
+}

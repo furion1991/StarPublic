@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apigateway
+  namespace: prod
+  labels:
+    app: apigateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apigateway
+  template:
+    metadata:
+      labels:
+        app: apigateway
+    spec:
+      containers:
+        - name: apigateway
+          volumeMounts:
+            - name: shared-images
+              mountPath: /app/resources
+          image: registry.24cases.ru/stardrop1/api-gateway:${IMAGE_TAG}
+          ports:
+            - containerPort: 9000
+          envFrom:
+            - secretRef:
+                name: common-env-secret
+      volumes:
+        - name: shared-images
+          hostPath:
+            path: /home/furion1991/stardrop/resources
+            type: DirectoryOrCreate
+      imagePullSecrets:
+        - name: gitlab-regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: apigateway
+  namespace: prod
+spec:
+  selector:
+    app: apigateway
+  ports:
+    - protocol: TCP
+      port: 9000
+      targetPort: 9000
+  type: ClusterIP

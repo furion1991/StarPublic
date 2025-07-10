@@ -1,0 +1,296 @@
+.crashRocketActions {
+  position: relative;
+  max-width: 1131px;
+  width: 100%;
+  height: 189px;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 28px 41px 24px 33px;
+  box-sizing: border-box;
+
+  & > button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 273px;
+    height: 62px;
+    margin-left: 36px;
+    margin-right: 33px;
+  }
+}
+
+.actionPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 360px;
+  height: 81px;
+  padding: 0 25px 0 40px;
+  box-sizing: border-box;
+
+  &:last-of-type {
+    padding-left: 25px;
+    padding-right: 40px;
+  }
+
+  button {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.bottom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.autoStopSwitch {
+  width: 50px;
+  height: 30px;
+
+  input:checked + span {
+    background: #1f2062;
+
+    &::before {
+      left: 25.5px;
+      background: #68b21e;
+    }
+  }
+
+  span {
+    background: #1f2062;
+
+    &::before {
+      top: 6px;
+      background: #d12a52;
+    }
+  }
+}
+
+.autoStopBg {
+  position: absolute;
+  left: 50%;
+  bottom: 1px;
+  transform: translateX(-50%);
+}
+
+.textField {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+
+  input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 900;
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.maxBetValueError {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-exo2);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-error);
+}
+
+@media screen and (max-width: 1170px) {
+  .crashRocketActions {
+    max-width: 866px;
+  }
+
+  .top {
+    padding: 37px 25px 31px;
+
+    & > button {
+      font-size: 18px;
+    }
+  }
+
+  .crashRocketActions {
+    height: 173px;
+  }
+
+  .bottom {
+    padding: 0;
+
+    label {
+      font-size: 16px;
+    }
+  }
+
+  .textField {
+    input {
+      font-size: 20px;
+    }
+  }
+
+  .actionPanel {
+    padding-left: 30px;
+    padding-right: 20px;
+    height: 62px;
+
+    &:last-of-type {
+      padding-left: 20px;
+      padding-right: 30px;
+    }
+
+    button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .maxBetValueError {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .crashRocketActions {
+    height: auto;
+  }
+
+  .bg {
+    display: none;
+  }
+
+  .top {
+    padding: 15px;
+    border-radius: 15px;
+    background: linear-gradient(357deg, #3d3a9e 1.29%, #4145b7 45.49%, #3855ee 96.92%);
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .actionPanel {
+    padding: 0 15px;
+    border-radius: 15px;
+    background: #3436a3;
+
+    &:last-of-type {
+      padding: 0 15px;
+    }
+  }
+
+  .autoStopBg {
+    bottom: 0;
+  }
+
+  .bottom {
+    padding: 12px 0;
+  }
+
+  .maxBetValueError {
+    top: auto;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .content {
+    padding: 0;
+  }
+
+  .top {
+    & > button {
+      margin: 0 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .top {
+    display: grid;
+    grid-template-columns: 1fr minmax(147px, 1fr);
+    grid-template-rows: 50px 50px;
+    gap: 5px;
+
+    & > button {
+      width: 100%;
+      height: 100%;
+      grid-row: span 2;
+      gap: 0 5px;
+      font-size: 22px;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+  }
+
+  .actionPanel {
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+
+    &:last-of-type {
+      grid-column: 1;
+      grid-row: 2;
+      padding: 0 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .top {
+    grid-template-columns: 1fr minmax(auto, 147px);
+
+    & > button {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 24px;
+    }
+  }
+
+  .textField {
+    input {
+      font-size: 16px;
+    }
+  }
+}

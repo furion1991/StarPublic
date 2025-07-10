@@ -1,0 +1,26 @@
+.contractsHistoryList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 28px;
+  padding: 30px 35px 35px;
+}
+
+@media screen and (max-width: 1024px) {
+  .contractsHistoryList {
+    gap: 15px;
+    padding: 17.5px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .contractsHistoryList {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .contractsHistoryList {
+    padding: 0;
+    margin-top: 25px;
+  }
+}

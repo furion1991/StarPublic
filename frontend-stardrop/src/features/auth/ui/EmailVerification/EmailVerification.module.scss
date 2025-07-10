@@ -1,0 +1,46 @@
+.emailVerification {
+  .btn {
+    width: 100%;
+    margin-top: 85px;
+  }
+}
+
+.resendCode {
+  text-align: center;
+  color: #5a5ea6;
+  font-weight: 400;
+}
+
+.messageSendedContainer {
+  margin-top: 85px;
+
+  p {
+    &:nth-of-type(1) {
+      font-family: var(--font-exo2);
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 36px;
+      text-align: center;
+    }
+
+    &:nth-of-type(2) {
+      margin-top: 15px;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .messageSendedContainer {
+    margin-top: 35px;
+  }
+
+  .emailVerification {
+    .btn {
+      margin-top: 35px;
+    }
+  }
+}

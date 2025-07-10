@@ -1,0 +1,80 @@
+.bonusesPage {
+  position: relative;
+  width: 100%;
+
+  h1 {
+    margin-bottom: 74px;
+    font-family: var(--font-exo2);
+    font-size: 37px;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+.wrapper {
+  max-width: 1450px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 82px;
+  padding-bottom: 95px;
+}
+
+.howItWorks {
+  margin-top: 85px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 19px;
+  }
+}
+
+.howItWorksAccordionList {
+  margin-top: 42px;
+}
+
+.needAuth {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 35px;
+  padding: 44px 60px 53px 50px;
+  border-radius: 20px;
+  background: linear-gradient(0deg, #29265d 0%, #293d9f 100%);
+  box-shadow: 0px 24px 31.6px -17px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+
+  button {
+    margin-left: auto;
+    width: 199px;
+    height: 53px;
+    font-size: 20px;
+    font-weight: 900;
+  }
+}
+
+.needAuthText {
+  margin-left: 27px;
+
+  p {
+    font-family: var(--font-exo2);
+
+    &:nth-of-type(1) {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 29px;
+      text-transform: uppercase;
+    }
+
+    &:nth-of-type(2) {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 21px;
+      color: #b0b3e2;
+    }
+  }
+}

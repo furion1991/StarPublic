@@ -1,0 +1,274 @@
+.dailyBonusModal {
+  max-width: 612px;
+  width: 100%;
+  margin: 0 10px;
+}
+
+.content {
+  position: relative;
+  padding: 35px 35px 30px;
+  overflow: hidden;
+}
+
+.bonusClaim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 210px;
+  width: 100%;
+  width: auto;
+  margin: 0 auto;
+
+  & > p {
+    font-family: var(--font-exo2);
+    text-align: center;
+
+    &:nth-of-type(1) {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    &:last-of-type {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #8488c7;
+    }
+  }
+
+  & > button {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+.bonusValue {
+  margin-top: 15px;
+  font-family: var(--font-exo2);
+  font-size: 30px;
+  font-weight: 700;
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.bonusProgression {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: 65px 25px;
+  gap: 0 18px;
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px 14px;
+  border-radius: 10px;
+  background: #1f2461;
+  box-sizing: border-box;
+}
+
+.megaBonus {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  grid-row: 1 / 3;
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #8e5c70 0%, #2a2c6e 100%);
+  box-shadow: 0px 1px 0px 0px rgba(255, 206, 206, 0.25) inset,
+    0px 12px 10.8px -6px rgba(0, 0, 0, 0.13);
+
+  p {
+    font-family: var(--font-exo2);
+
+    &:first-of-type {
+      font-size: 35px;
+      font-weight: 800;
+      line-height: 36px;
+      color: #f18d72;
+    }
+
+    &:last-of-type {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}
+
+.bonusProgressionDesc {
+  p {
+    font-family: var(--font-exo2);
+    font-size: 14px;
+    font-weight: 600;
+
+    &:nth-of-type(1) {
+      color: #777bba;
+    }
+
+    &:nth-of-type(2) {
+      margin-top: 5px;
+      color: #fd5;
+    }
+  }
+}
+
+.bonusProgressionList {
+  display: flex;
+  grid-row: 2;
+  grid-column: 2;
+  gap: 2px;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 25px;
+    color: #5b61ba;
+    background: #2a2f7c;
+
+    &.filled {
+      color: #fff;
+      background: linear-gradient(180deg, #f08b75 0%, #d35995 100%);
+      box-shadow: 0px 1px 0px 0px #ffb395 inset;
+    }
+
+    &:first-of-type {
+      border-radius: 5px 0px 0px 5px;
+    }
+
+    &:last-of-type {
+      border-radius: 0px 5px 5px 0px;
+    }
+
+    span {
+      font-family: var(--font-exo2);
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+}
+
+.bgArrows {
+  position: absolute;
+  top: 12px;
+  width: 100%;
+
+  img {
+    position: absolute;
+
+    &:first-of-type {
+      left: -35px;
+    }
+
+    &:last-of-type {
+      right: 35px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.bonusClaimSuccess {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 203px;
+  padding-top: 30px;
+  box-sizing: border-box;
+
+  p {
+    position: relative;
+    margin-top: 15px;
+    font-size: var(--font-exo2);
+    font-weight: 600;
+    z-index: 1;
+  }
+}
+
+.bonusClaimedValue {
+  position: relative;
+  font-family: var(--font-exo2);
+  font-size: 50px;
+  font-weight: 800;
+  z-index: 1;
+
+  svg {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.bgLight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 254px;
+  border-radius: 350px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(109, 118, 242, 0.4) 0%,
+    rgba(115, 115, 115, 0) 100%
+  );
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    padding: 25px 10px 20px;
+  }
+
+  .bgArrows {
+    display: none;
+  }
+
+  .bonusProgression {
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 1fr 25px;
+    gap: 10px;
+  }
+
+  .bonusProgressionList {
+    grid-column: 1 / 3;
+    grid-row: 2;
+  }
+
+  .megaBonus {
+    grid-row: 1;
+    width: 70px;
+    height: 70px;
+
+    p {
+      &:first-of-type {
+        font-size: 22px;
+        line-height: 26px;
+      }
+
+      &:last-of-type {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .bonusProgressionDesc {
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .bonusClaimSuccess {
+    height: 100px;
+    padding-top: 0;
+  }
+
+  .bgLight {
+    width: 300px;
+    height: 150px;
+  }
+}

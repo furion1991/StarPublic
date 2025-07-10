@@ -1,0 +1,7 @@
+﻿POST https://24cases.ru/api/auth/login
+Content-Type: application/json
+
+{
+  "Email": "furion1911119@gmail.com",
+  "Password": "StrongPassword123."
+}

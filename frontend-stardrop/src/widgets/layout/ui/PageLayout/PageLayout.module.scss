@@ -1,0 +1,14 @@
+.pageLayout {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.main {
+  max-width: 3840px;
+  width: 100%;
+  margin: 0 auto;
+}

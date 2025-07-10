@@ -1,0 +1,211 @@
+.userAuthorizedMainInfo {
+  display: flex;
+  height: 277px;
+  padding: 35px;
+  border-radius: 20px;
+  background: #1b205a;
+  box-sizing: border-box;
+}
+
+.avatarUploadBtn {
+  margin-top: 10px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 38px;
+}
+
+.topLine {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 15px;
+  width: 100%;
+}
+
+.userName {
+  max-width: 230px;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 21px;
+
+  &Container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &ChangeBtn {
+    padding: 9px 13px;
+    border-radius: 5px;
+    background: #151951;
+    font-size: 13px;
+    font-weight: 900;
+    color: #7c7e9d;
+    text-transform: uppercase;
+  }
+}
+
+.balance {
+  margin-top: 18px;
+
+  &.mobile {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+    grid-column: 1 / 3;
+    margin-top: 0;
+  }
+}
+
+.bestDrop,
+.favoriteCase {
+  margin-left: 25px;
+  width: 295px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  img {
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .bestDrop,
+  .favoriteCase {
+    max-width: 225px;
+    width: 100%;
+    flex-shrink: 1;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .bestDrop,
+  .favoriteCase {
+    align-self: flex-end;
+    height: 158px;
+  }
+
+  .userAuthorizedMainInfo {
+    padding: 25px 15px;
+    height: auto;
+  }
+
+  .userInfo {
+    margin-left: 20px;
+  }
+
+  .topLine {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 0;
+  }
+
+  .idCopier {
+    margin-left: 0;
+  }
+
+  .avatarUploadBtn {
+    display: none;
+  }
+
+  .avatar {
+    & > img {
+      width: 158px;
+      height: 158px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .bestDrop {
+    margin-left: 15px;
+  }
+
+  .favoriteCase {
+    margin-left: 10px;
+  }
+
+  .userNameContainer,
+  .topLine > form {
+    position: absolute;
+    top: 0;
+  }
+
+  .topLine {
+    height: 79px;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bestDrop,
+  .favoriteCase {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .userNameContainer,
+  .topLine > form {
+    position: static;
+    top: auto;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .topLine {
+    height: auto;
+    align-items: flex-end;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .userAuthorizedMainInfo {
+    display: grid;
+    grid-template-columns: 145px 1fr;
+    gap: 11px 17px;
+    padding: 20px 15px;
+  }
+
+  .userInfo {
+    width: 100%;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .topLine {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .balance {
+    display: none;
+
+    &.mobile {
+      display: block;
+    }
+  }
+
+  .userName {
+    word-break: break-all;
+    font-size: 16px;
+  }
+
+  .avatar {
+    & > img {
+      width: 145px;
+      height: 145px;
+    }
+  }
+}

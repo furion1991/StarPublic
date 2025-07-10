@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-service
+  namespace: dev
+  labels:
+    app: users-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users-service
+  template:
+    metadata:
+      labels:
+        app: users-service
+    spec:
+      containers:
+        - name: users-service
+          image: registry.24cases.ru/stardrop1/users-service:${IMAGE_TAG}
+          ports:
+            - containerPort: 7005
+          envFrom:
+            - secretRef:
+                name: common-env-secret
+      imagePullSecrets:
+        - name: gitlab-regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+  namespace: dev
+spec:
+  selector:
+    app: users-service
+  ports:
+    - protocol: TCP
+      port: 7005
+      targetPort: 7005
+  type: ClusterIP

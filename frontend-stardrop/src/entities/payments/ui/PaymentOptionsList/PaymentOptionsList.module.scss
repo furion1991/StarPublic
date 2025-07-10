@@ -1,0 +1,65 @@
+.paymentOptionsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 15px;
+}
+
+.paymentOption {
+  button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    border-radius: 15px;
+    background: #20256e;
+    border: 1px solid #20256e;
+    transition: var(--transition);
+    z-index: 1;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      border-radius: inherit;
+      background: linear-gradient(252deg, #2c2376 15.12%, #42338a 91.67%);
+      opacity: 0;
+      z-index: -1;
+      transition: var(--transition);
+    }
+  }
+
+  &.selected {
+    button {
+      border: 1px solid #8b3ffd;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .paymentOptionsList {
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    gap: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .paymentOptionsList {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .paymentOptionsList {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 8px 10px;
+  }
+}

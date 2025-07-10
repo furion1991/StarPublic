@@ -1,0 +1,54 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  IMAGE_TAG: $CI_COMMIT_SHORT_SHA
+  IMAGE_NAME: registry.24cases.ru/stardrop1/financial-service
+  DEPLOY_HOST: furion1991@195.230.23.100
+  DOCKER_CONFIG: "$CI_PROJECT_DIR/.docker"
+  
+before_script:
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - ssh-keyscan -H 195.230.23.100 >> ~/.ssh/known_hosts
+  - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" $CI_REGISTRY --password-stdin
+build:
+  stage: build
+  script:
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG .
+    - docker push $IMAGE_NAME:$IMAGE_TAG
+
+deploy-dev:
+  stage: deploy
+  environment: dev
+  script:
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - envsubst < ./k8s/dev/financial-service.yaml > ./k8s/dev/financial-service.generated.yaml
+    - scp ./k8s/dev/financial-service.generated.yaml $DEPLOY_HOST:/tmp/financial-service.yaml
+    - ssh $DEPLOY_HOST "kubectl apply -f /tmp/financial-service.yaml --namespace=dev"
+  only:
+    - dev
+
+deploy-stage:
+  stage: deploy
+  environment: stage
+  script:
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - envsubst < ./k8s/stage/financial-service.yaml > ./k8s/stage/financial-service.generated.yaml
+    - scp ./k8s/stage/financial-service.generated.yaml $DEPLOY_HOST:/tmp/financial-service.yaml
+    - ssh $DEPLOY_HOST "kubectl apply -f /tmp/financial-service.yaml --namespace=stage"
+  only:
+    - stage
+
+deploy-prod:
+  stage: deploy
+  environment: production
+  script:
+    - export IMAGE_TAG=$CI_COMMIT_SHORT_SHA
+    - envsubst < ./k8s/prod/financial-service.yaml > ./k8s/prod/financial-service.generated.yaml
+    - scp ./k8s/prod/financial-service.generated.yaml $DEPLOY_HOST:/tmp/financial-service.yaml
+    - ssh $DEPLOY_HOST "kubectl apply -f /tmp/financial-service.yaml --namespace=prod"
+  only:
+    - main

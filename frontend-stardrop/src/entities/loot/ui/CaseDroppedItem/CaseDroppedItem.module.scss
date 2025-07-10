@@ -1,0 +1,83 @@
+.caseDroppedItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 36px 20px 19px;
+  border-radius: 15px;
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+  }
+
+  &::before {
+    left: 0;
+    background: linear-gradient(270deg, rgba(35, 93, 190, 0) 0%, #090d31 100%);
+  }
+
+  &::after {
+    right: 0;
+    transform: rotate(180deg);
+    background: linear-gradient(270deg, rgba(35, 93, 190, 0) 0%, #090d31 100%);
+  }
+}
+
+.game,
+.name,
+.sellBtn {
+  position: relative;
+  z-index: 10;
+}
+
+.name {
+  margin-top: 23.5px;
+  font-family: var(--font-exo2);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+.game {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+}
+
+.sellBtn {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.triangles {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.triangle {
+  position: relative;
+
+  &Left {
+    left: -14px;
+  }
+
+  &Right {
+    right: -14px;
+    transform: rotate(180deg);
+  }
+}

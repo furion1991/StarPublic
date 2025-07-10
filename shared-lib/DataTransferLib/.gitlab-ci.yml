@@ -1,0 +1,70 @@
+stages:
+  - build
+  - publish
+
+variables:
+  DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+  NUGET_PACKAGES: "$CI_PROJECT_DIR/.nuget/packages"
+  BUILD_CONFIG: "Release"
+  NUGET_OUTPUT_DIR: "$CI_PROJECT_DIR/out"
+  NUGET_SOURCE_URL: "https://gitlab.24cases.ru/api/v4/projects/$CI_PROJECT_ID/packages/nuget/index.json"
+  BASE_VERSION: "1.0.0"
+
+default:
+  image: mcr.microsoft.com/dotnet/sdk:9.0
+
+before_script:
+  - dotnet restore DataTransferLib/DataTransferLib.csproj
+  - dotnet restore DtoClassLibrary/DtoClassLibrary.csproj
+
+build:
+  stage: build
+  script:
+    - |
+      if [[ "$CI_COMMIT_REF_NAME" == "main" ]]; then
+        PACKAGE_VERSION="$BASE_VERSION"
+      elif [[ "$CI_COMMIT_REF_NAME" == "stage" ]]; then
+        PACKAGE_VERSION="$BASE_VERSION-rc-$CI_COMMIT_SHORT_SHA"
+      else
+        PACKAGE_VERSION="$BASE_VERSION-dev-$CI_COMMIT_SHORT_SHA"
+      fi
+      echo "📦 Building version: $PACKAGE_VERSION"
+      dotnet build DataTransferLib/DataTransferLib.csproj -c $BUILD_CONFIG
+      dotnet build DtoClassLibrary/DtoClassLibrary.csproj -c $BUILD_CONFIG
+      dotnet pack DataTransferLib/DataTransferLib.csproj -c $BUILD_CONFIG -o $NUGET_OUTPUT_DIR -p:Version=$PACKAGE_VERSION
+      dotnet pack DtoClassLibrary/DtoClassLibrary.csproj -c $BUILD_CONFIG -o $NUGET_OUTPUT_DIR -p:Version=$PACKAGE_VERSION
+  artifacts:
+    paths:
+      - out/
+    expire_in: 1 hour
+
+publish:
+  stage: publish
+  script:
+    - echo "🔄 Uploading packages to $NUGET_SOURCE_URL"
+    - for file in $NUGET_OUTPUT_DIR/*.nupkg; do
+      echo "📤 Pushing $file";
+      dotnet nuget push "$file" --source "$NUGET_SOURCE_URL" --api-key "$CI_JOB_TOKEN" --skip-duplicate;
+      done
+  only:
+    - main
+    - stage
+    - dev
+
+# trigger-services:
+#   stage: publish
+#   script:
+#     - |
+#       echo "🔁 Triggering dependent service pipelines..."
+
+#       curl -X POST -F token=$ADMIN_API_TRIGGER -F ref=dev https://gitlab.24cases.ru/api/v4/projects/4/trigger/pipeline
+#       curl -X POST -F token=$API_TRIGGER -F ref=dev https://gitlab.24cases.ru/api/v4/projects/5/trigger/pipeline
+#       curl -X POST -F token=$CASES_TRIGGER -F ref=dev https://gitlab.24cases.ru/api/v4/projects/7/trigger/pipeline
+#       curl -X POST -F token=$AUDIT_TRIGGER -F ref=dev https://gitlab.24cases.ru/api/v4/projects/6/trigger/pipeline
+#       curl -X POST -F token=$AUHT_TRIGGER -F ref=dev https://gitlab.24cases.ru/api/v4/projects/3/trigger/pipeline
+#       curl -X POST -F token=$FIN_TRIGGER -F ref=dev https://gitlab.24cases.ru/api/v4/projects/8/trigger/pipeline
+#       curl -X POST -F token=$USERS_TOKEN -F ref=dev https://gitlab.24cases.ru/api/v4/projects/9/trigger/pipeline
+#   only:
+#     - main
+#     - stage
+#     - dev

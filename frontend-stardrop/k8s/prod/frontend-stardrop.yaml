@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-stardrop
+  namespace: prod
+  labels:
+    app: frontend-stardrop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend-stardrop
+  template:
+    metadata:
+      labels:
+        app: frontend-stardrop
+    spec:
+      containers:
+        - name: frontend-stardrop
+          image: registry.24cases.ru/stardrop1/frontend-stardrop:${IMAGE_TAG}
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - secretRef:
+                name: common-env-secret
+      imagePullSecrets:
+        - name: gitlab-regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-stardrop
+  namespace: prod
+spec:
+  selector:
+    app: frontend-stardrop
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP

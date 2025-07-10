@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: financial-service
+  namespace: dev
+  labels:
+    app: financial-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: financial-service
+  template:
+    metadata:
+      labels:
+        app: financial-service
+    spec:
+      containers:
+        - name: financial-service
+          image: registry.24cases.ru/stardrop1/financial-service:${IMAGE_TAG}
+          ports:
+            - containerPort: 7009
+          envFrom:
+            - secretRef:
+                name: common-env-secret
+      imagePullSecrets:
+        - name: gitlab-regcred
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: financial-service
+  namespace: dev
+spec:
+  selector:
+    app: financial-service
+  ports:
+    - protocol: TCP
+      port: 7009
+      targetPort: 7009
+  type: ClusterIP

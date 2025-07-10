@@ -1,0 +1,185 @@
+.privacyPolicyPage {
+  p {
+    line-height: 1.5;
+    color: #bcc0fa;
+  }
+
+  h1 {
+    font-family: var(--font-exo2);
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.wrapper {
+  max-width: 1270px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 85px 20px;
+}
+
+.updateDate {
+  margin-top: 20px;
+  font-style: italic;
+  text-align: right;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 60px;
+
+  & > div > ul {
+    margin-top: 10px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+}
+
+.sectionTitle {
+  font-family: var(--font-exo2);
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+
+  .sectionNumber {
+    font-size: 25px;
+  }
+}
+
+.sectionDescription {
+  margin-top: 10px;
+}
+
+.sectionNumber {
+  font-family: var(--font-exo2);
+  font-weight: 800;
+  font-size: 17px;
+  background: var(--gradient-purple);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.securityPolicy {
+  margin-top: 40px;
+
+  h2 {
+    margin-bottom: 20px;
+    font-family: var(--font-exo2);
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  p {
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1310px) {
+  .wrapper {
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .privacyPolicyPage {
+    h1 {
+      font-size: 20px;
+    }
+  }
+
+  .securityPolicy {
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+
+    .sectionNumber {
+      font-size: 21px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .privacyPolicyPage {
+    p {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 18px;
+    }
+  }
+
+  .sections {
+    margin-top: 20px;
+  }
+
+  .sectionNumber {
+    font-size: 14px;
+  }
+
+  .sectionTitle {
+    font-size: 18px;
+
+    .sectionNumber {
+      font-size: 19px;
+    }
+  }
+
+  .securityPolicy {
+    margin-top: 20px;
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    padding: 40px 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .privacyPolicyPage {
+    p {
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: 16px;
+    }
+  }
+
+  .sectionNumber {
+    font-size: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+
+    .sectionNumber {
+      font-size: 17px;
+    }
+  }
+
+  .securityPolicy {
+    h2 {
+      font-size: 16px;
+    }
+  }
+}

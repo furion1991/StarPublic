@@ -1,0 +1,82 @@
+.withdrawItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 20px 25px;
+  border-radius: 20px;
+  background: #161953;
+  box-sizing: border-box;
+}
+
+.itemImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 109px;
+  height: 109px;
+}
+
+.rarity {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.itemName {
+  margin-left: 17px;
+  font-family: var(--font-exo2);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.price {
+  margin-left: 35px;
+  font-family: var(--font-exo2);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.status {
+  margin-left: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .withdrawItem {
+    padding: 10px 15px;
+  }
+
+  .itemImage {
+    width: 90px;
+    height: 87px;
+
+    & > img {
+      position: relative;
+      width: 90px;
+      height: 45px;
+      z-index: 1;
+    }
+  }
+
+  .rarity {
+    img {
+      width: 87px;
+      height: 87px;
+    }
+  }
+
+  .price {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .itemName {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+}
